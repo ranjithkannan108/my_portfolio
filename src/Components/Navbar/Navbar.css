@@ -1,0 +1,143 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.nav-logo h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-menu li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: var(--text-primary);
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--accent-gradient);
+  transition: var(--transition);
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-connect-btn {
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--glass-bg);
+}
+
+.nav-connect-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+.open,
+.close {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    height: 70px;
+  }
+
+  .nav-logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .open {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: var(--transition);
+  }
+
+  .open:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    transition: var(--transition);
+    border-left: 1px solid var(--glass-border);
+    gap: 3rem;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .close {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: var(--transition);
+  }
+
+  .close:hover {
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  .nav-connect-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  /* Crisp white background */
+  --text-primary: #1a1a1a;
+  /* Dark neutral for strong readability */
+  --text-secondary: #5f6f52;
+  /* Muted olive-gray for softer text */
+  --accent-color: #3a7d44;
+  /* Natural green accent */
+
+  /* White-Green Olive Gradient */
+  --accent-gradient: linear-gradient(135deg, #3a7d44 0%, #708238 100%);
+
+  --glass-bg: rgba(58, 125, 68, 0.05);
+  /* Gentle green tint */
+  --glass-border: rgba(112, 130, 56, 0.15);
+  /* Olive border */
+
+  --card-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.12);
+  /* Softer shadow for light theme */
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: calc(100vh - 80px);
+  /* Adjust based on navbar height */
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Utility Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-simple {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideInLeft {
+  from {
+    transform: translateX(-50px) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-down {
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.animate-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-slide-left {
+  animation: fadeSlideInLeft 0.8s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 5%;
+  }
+}

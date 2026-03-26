@@ -1,0 +1,144 @@
+.about {
+  padding: 100px 5%;
+}
+
+.section-padding {
+  padding: 100px 5%;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-weight: 800;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-wrapper {
+  padding: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: slideInDown 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.about-summary {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.skill-category h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tags span {
+  padding: 8px 18px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.skill-tags span:hover {
+  background: var(--accent-gradient);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.about-education {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.about-education h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+.edu-item {
+  padding-left: 1rem;
+}
+
+.edu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.edu-head h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.edu-grade {
+  padding: 4px 12px;
+  background: var(--accent-gradient);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.edu-coll {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.edu-year {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    padding: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
