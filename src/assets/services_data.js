@@ -40,6 +40,13 @@ const mywork_data = [
     w_desc: "Built with JavaScript, this Chrome extension dynamically injects CSS to toggle between dark and light modes on PDF viewers, significantly reducing eye strain for students and professionals.",
     w_img: "/src/assets/pdf-theme-changer.png",
     w_url: "https://github.com/ranjithkannan108/pdf-theme-changer"
+  },
+  {
+    w_no: 7,
+    w_name: "Daily Planner",
+    w_desc: "A premium productivity application featuring a sleek 'paper planner' aesthetic. Includes persistent local storage for schedule management, task tracking, and personalized goal settings.",
+    w_img: "/src/assets/daily-planner.png",
+    w_url: "https://github.com/ranjithkannan108/my_daily_planner"
   }
 ];
 export default mywork_data;
