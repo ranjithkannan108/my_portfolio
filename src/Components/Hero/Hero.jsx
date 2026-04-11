@@ -22,7 +22,10 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-right">
-          <img src={Profile_img} alt="Ranjith Kannan" className="profile-img" />
+          <div className="profile-img-container">
+            <div className="profile-img-bg"></div>
+            <img src={Profile_img} alt="Ranjith Kannan" className="profile-img" />
+          </div>
         </div>
       </div>
     </section>
