@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container hero-container">
         <div className="hero-left">
           <h1 className="hero-title">
-            <span>I'm Ranjith Kannan U</span>
+            I'm <span className="hero-name-wrap">Ranjith Kannan U</span>
           </h1>
           <h2 className="hero-role gradient-text">Software Engineer</h2>
           <p className="hero-desc">
