@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css'
 import menu_open from '../../assets/menu_open.png'
@@ -18,14 +18,52 @@ const Navbar = () => {
     menuRef.current.style.right = "-350px";
   }
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+
+      const menuLinks = Array.from(document.querySelectorAll('.nav-menu li a'));
+      const focusedElement = document.activeElement;
+      const isInputFocused = focusedElement.tagName === 'INPUT' || focusedElement.tagName === 'TEXTAREA';
+      const currentIndex = menuLinks.indexOf(focusedElement);
+
+      if (isInputFocused) return;
+
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nextIndex = (currentIndex + 1) % menuLinks.length;
+        menuLinks[nextIndex].focus();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prevIndex = (currentIndex - 1 + menuLinks.length) % menuLinks.length;
+        menuLinks[prevIndex].focus();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        window.scrollBy({ top: 200, behavior: 'smooth' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        window.scrollBy({ top: -200, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <nav className='navbar' key={location.pathname}>
       <div className="nav-logo gradient-text">
         <h1>Ranjith Kannan</h1>
       </div>
-      <img src={menu_open} onClick={openMenu} alt="Open Menu" className='open' />
+      <button className='nav-toggle open' onClick={openMenu} aria-label="Open Menu">
+        <img src={menu_open} alt="" />
+      </button>
       <ul ref={menuRef} className='nav-menu'>
-        <img src={menu_close} onClick={closeMenu} alt="Close Menu" className='close' />
+        <button className='nav-toggle close' onClick={closeMenu} aria-label="Close Menu">
+          <img src={menu_close} alt="" />
+        </button>
         <li onClick={closeMenu}><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Profile</NavLink></li>
         <li onClick={closeMenu}><NavLink to="/aboutme" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
         <li onClick={closeMenu}><NavLink to="/experience" className={({ isActive }) => isActive ? "active" : ""}>Internships</NavLink></li>

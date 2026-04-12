@@ -31,7 +31,7 @@ const Contact = () => {
             </div>
           </div>
           <form action="https://api.web3forms.com/submit" method="POST" className="contact-form glass">
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"></input>
+            <input type="hidden" name="access_key" value="40e280f2-86eb-4b2d-b9d4-d11ed03f3b57" />
             <div className="form-group">
               <label>Your Name</label>
               <input type="text" placeholder="Enter your name" name='name' className="form-input" required />
