@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 import Profile_img from '/src/assets/profile.JPG'
-import resume from '/src/assets/Ranjith kannan U Resume.pdf';
+import resume from '/src/assets/ranjith_kannan_U_resume.pdf';
 
 const Hero = () => {
   return (
