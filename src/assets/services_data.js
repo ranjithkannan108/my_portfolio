@@ -23,10 +23,10 @@ const mywork_data = [
   },
   {
     w_no: 3,
-    w_name: "Edspark - Clone",
-    w_desc: "A high-fidelity landing page clone focusing on modern UI/UX principles. Features glassmorphism, responsive CSS Grid layouts, and custom scroll-reveal animations for an immersive feel.",
+    w_name: "Edspark (Clone)",
+    w_desc: "During my Web Development Internship at Codexeon, a Bangalore-based start-up, I spearheaded the creation of this Edspark clone using pure HTML, CSS, and vanilla JavaScript. Key features I implemented include an interactive course dashboard with dynamic filtering, a custom-built video player interface, and complex glassmorphism-based navigation systems. My work focused on writing semantic markup for SEO, crafting pixel-perfect responsive layouts using CSS Grid and Flexbox, and ensuring smooth UI transitions with optimized JS animations. This project demonstrates my ability to build sophisticated, production-ready web applications from the ground up without relying on heavy frameworks.",
     w_img: edspark_img,
-    w_url: "https://github.com/ranjithkannan108/Edspark.in"
+    w_url: "https://edspark-in.vercel.app/Home/home"
   },
   {
     w_no: 4,
