@@ -30,6 +30,7 @@ const About = () => {
                   <span>CSS</span>
                   <span>JavaScript</span>
                   <span>Bootstrap</span>
+                  <span>Spring Boot</span>
                   <span>Java</span>
                   <span>JDBC</span>
                   <span>SQL</span>
