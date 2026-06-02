@@ -14,7 +14,9 @@ const Hero = () => {
           </h1>
           <h2 className="hero-role gradient-text">Software Engineer</h2>
           <p className="hero-desc">
-            Passionate Software Engineer with strong problem-solving skills and a focus on AI-driven tools. Proficient in JavaScript, HTML, and CSS, with practical experience in Java and SQL. Committed to delivering scalable and efficient solutions.
+            A motivated Full Stack Developer with hands‑on experience in building scalable web applications using Java, Spring Boot, JDBC, MySQL, HTML, CSS, and JavaScript. My background includes internships at Marcello Tech, VEI Technologies, Codexaon Bengaluru, and multiple real‑world projects such as MEDREMINDER, Titan Fitness, and EdSpark Clone.
+            <br /><br />
+            With a strong foundation in Data Structures, RESTful APIs, and Agile methodologies, I am eager to contribute to engineering teams that value responsive design, efficient database management, and user‑focused solutions.
           </p>
           <div className="hero-actions">
             <Link to="/contactus" className="hero-btn primary">Connect with me</Link>
