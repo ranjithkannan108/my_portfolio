@@ -21,9 +21,43 @@
   --card-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.12);
   /* Softer shadow for light theme */
 
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --mobile-menu-bg: rgba(255, 255, 255, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --secondary-btn-bg: rgba(255, 255, 255, 0.1);
+  --secondary-btn-border: rgba(255, 255, 255, 0.2);
+  --hero-gradient-end: rgba(58, 125, 68, 0.03);
+
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme="dark"] {
+  --bg-color: #0b0f12;
+  /* Rich deep dark forest green/black background */
+  --text-primary: #e2e8f0;
+  /* Crisp light text */
+  --text-secondary: #94a3b8;
+  /* Soft blue-gray secondary text */
+  --accent-color: #4ade80;
+  /* Vibrant green accent */
+
+  --accent-gradient: linear-gradient(135deg, #4ade80 0%, #a3e635 100%);
+
+  --glass-bg: rgba(74, 222, 128, 0.03);
+  /* Gentle transparent green tint */
+  --glass-border: rgba(74, 222, 128, 0.15);
+  /* Accent border */
+
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  /* Deeper shadow for dark layouts */
+
+  --navbar-bg: rgba(11, 15, 18, 0.85);
+  --mobile-menu-bg: rgba(11, 15, 18, 0.95);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --secondary-btn-bg: rgba(255, 255, 255, 0.05);
+  --secondary-btn-border: rgba(255, 255, 255, 0.1);
+  --hero-gradient-end: rgba(74, 222, 128, 0.03);
+}
 
 * {
   margin: 0;
@@ -41,6 +75,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -92,6 +127,7 @@ ul {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .gradient-text {

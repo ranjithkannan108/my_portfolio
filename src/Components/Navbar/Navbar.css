@@ -9,7 +9,7 @@
   right: 0;
   z-index: 1000;
   height: 80px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--navbar-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
   animation: slideInDown 0.8s ease-out forwards;
@@ -129,7 +129,30 @@
   display: none;
 }
 
-  
+.theme-toggle-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.theme-toggle-nav:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  transform: rotate(15deg);
+}
+
+.theme-toggle-nav svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
 
 li a:focus-visible,
 button:focus-visible {
@@ -178,7 +201,7 @@ button:focus-visible {
     height: 100vh;
     flex-direction: column;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--mobile-menu-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: var(--transition);
@@ -205,8 +228,6 @@ button:focus-visible {
     object-fit: contain;
   }
 
-  
-
   .close:hover {
     transform: rotate(90deg) scale(1.1);
   }
@@ -214,9 +235,5 @@ button:focus-visible {
   .nav-connect-btn {
     display: none;
   }
+
 }
-
-
-
-
-
