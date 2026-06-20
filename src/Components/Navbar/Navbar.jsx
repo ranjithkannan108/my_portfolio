@@ -7,7 +7,7 @@ const Navbar = () => {
   const menuRef = useRef();
   const [activeSection, setActiveSection] = useState('home');
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || 'dark';
   });
 
   useEffect(() => {
@@ -104,8 +104,9 @@ const Navbar = () => {
         <li onClick={closeMenu}><a href="#aboutme" className={activeSection === 'aboutme' ? 'active' : ''}>About</a></li>
         <li onClick={closeMenu}><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Internships</a></li>
         <li onClick={closeMenu}><a href="#project" className={activeSection === 'project' ? 'active' : ''}>Projects</a></li>
+        <li onClick={closeMenu}><a href="#contactus" className={activeSection === 'contactus' ? 'active' : ''}>Contact</a></li>
         <li>
-          <button className="theme-toggle-nav" onClick={toggleTheme} aria-label="Toggle Theme">
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
             {theme === 'light' ? (
               <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -125,7 +126,6 @@ const Navbar = () => {
             )}
           </button>
         </li>
-        <li onClick={closeMenu}><a href="#contactus" className={activeSection === 'contactus' ? 'active' : ''}>Contact</a></li>
       </ul>
     </nav>
   )

@@ -129,29 +129,28 @@
   display: none;
 }
 
-.theme-toggle-nav {
+.theme-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
-  border-radius: 50px;
+  color: var(--text-primary);
+  border-radius: 50%;
   transition: var(--transition);
 }
 
-.theme-toggle-nav:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.08);
+.theme-toggle:hover {
+  background: var(--glass-bg);
+  color: var(--accent-color);
   transform: rotate(15deg);
 }
 
-.theme-toggle-nav svg {
+.theme-toggle svg {
   width: 20px;
   height: 20px;
-  display: block;
 }
 
 li a:focus-visible,
@@ -235,5 +234,4 @@ button:focus-visible {
   .nav-connect-btn {
     display: none;
   }
-
 }
