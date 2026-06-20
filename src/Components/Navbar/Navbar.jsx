@@ -1,12 +1,11 @@
-import React, { useRef, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
 import './Navbar.css'
 import menu_open from '../../assets/menu_open.png'
 import menu_close from '../../assets/menu_close.png'
 
 const Navbar = () => {
   const menuRef = useRef();
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
 
   const openMenu = () => {
     menuRef.current.classList.add('nav-active');
@@ -18,6 +17,7 @@ const Navbar = () => {
     menuRef.current.style.right = "-350px";
   }
 
+  // Keyboard navigation & accessibility
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -52,8 +52,32 @@ const Navbar = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Scroll Spy to highlight the active section in navigation
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const sections = ['home', 'aboutme', 'experience', 'project', 'contactus'];
+      const sectionElements = sections.map(id => document.getElementById(id)).filter(Boolean);
+      
+      let currentActive = 'home';
+      const navbarHeight = 90; // offset height of navbar + padding
+
+      for (const el of sectionElements) {
+        const rect = el.getBoundingClientRect();
+        // If the section is currently overlapping the viewport center area
+        if (rect.top <= navbarHeight + 120 && rect.bottom >= navbarHeight) {
+          currentActive = el.id;
+        }
+      }
+      setActiveSection(currentActive);
+    };
+
+    handleScrollSpy();
+    window.addEventListener('scroll', handleScrollSpy);
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, []);
+
   return (
-    <nav className='navbar' key={location.pathname}>
+    <nav className='navbar'>
       <div className="nav-logo gradient-text">
         <h1>Ranjith Kannan</h1>
       </div>
@@ -64,11 +88,11 @@ const Navbar = () => {
         <button className='nav-toggle close' onClick={closeMenu} aria-label="Close Menu">
           <img src={menu_close} alt="" />
         </button>
-        <li onClick={closeMenu}><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Profile</NavLink></li>
-        <li onClick={closeMenu}><NavLink to="/aboutme" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
-        <li onClick={closeMenu}><NavLink to="/experience" className={({ isActive }) => isActive ? "active" : ""}>Internships</NavLink></li>
-        <li onClick={closeMenu}><NavLink to="/project" className={({ isActive }) => isActive ? "active" : ""}>Projects</NavLink></li>
-        <li onClick={closeMenu}><NavLink to="/contactus" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink></li>
+        <li onClick={closeMenu}><a href="#home" className={activeSection === 'home' ? 'active' : ''}>Profile</a></li>
+        <li onClick={closeMenu}><a href="#aboutme" className={activeSection === 'aboutme' ? 'active' : ''}>About</a></li>
+        <li onClick={closeMenu}><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Internships</a></li>
+        <li onClick={closeMenu}><a href="#project" className={activeSection === 'project' ? 'active' : ''}>Projects</a></li>
+        <li onClick={closeMenu}><a href="#contactus" className={activeSection === 'contactus' ? 'active' : ''}>Contact</a></li>
       </ul>
     </nav>
   )

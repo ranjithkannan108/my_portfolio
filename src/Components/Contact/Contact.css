@@ -1,3 +1,7 @@
+.contact {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(58, 125, 68, 0.03) 100%);
+}
+
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -7,18 +11,18 @@
 
 .contact-info {
   opacity: 0;
+}
+
+.contact.in-view .contact-info {
   animation: slideInLeft 0.8s ease-out forwards;
   animation-delay: 0.4s;
 }
 
-.contact-form {
-  opacity: 0;
-  animation: slideInRight 0.8s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
 .section-title {
   opacity: 0;
+}
+
+.contact.in-view .section-title {
   animation: slideInDown 0.8s ease-out forwards;
   animation-delay: 0.2s;
 }
@@ -81,6 +85,12 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  opacity: 0;
+}
+
+.contact.in-view .contact-form {
+  animation: slideInRight 0.8s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
 .form-group {

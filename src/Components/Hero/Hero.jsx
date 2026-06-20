@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './Hero.css'
 import Profile_img from '/src/assets/profile.JPG'
 import resume from '../../assets/Resume_Ranjith_kannan_U.pdf';
@@ -19,7 +18,7 @@ const Hero = () => {
             With a strong foundation in Data Structures, RESTful APIs, and Agile methodologies, I am eager to contribute to engineering teams that value responsive design, efficient database management, and user‑focused solutions.
           </p>
           <div className="hero-actions">
-            <Link to="/contactus" className="hero-btn primary">Connect with me</Link>
+            <a href="#contactus" className="hero-btn primary">Connect with me</a>
             <a href={resume} target="_blank" rel="noopener noreferrer" className="hero-btn secondary">My Resume</a>
           </div>
         </div>
